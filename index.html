@@ -3,21 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Mangás</title>
+    <title>Minha Coleção de Mangás</title>
 </head>
 <body>
     <header>
-        <h1>Minha Coleção de Mangás</h1>
+        <div class="header-content">
+            <h1><i class="fas fa-book-reader"></i> Minha Coleção de Mangás</h1>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-volumes">0</span>
+                    <span class="stat-label">Volumes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="volumes-adquiridos">0</span>
+                    <span class="stat-label">Adquiridos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="volumes-faltando">0</span>
+                    <span class="stat-label">Faltando</span>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Pesquisar mangá...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="filter-container">
+            <select id="statusFilter">
+                <option value="">Todos</option>
+                <option value="Adquirido">Adquiridos</option>
+                <option value="Falta">Faltando</option>
+            </select>
+            <select id="sortOrder">
+                <option value="nome">Nome</option>
+                <option value="volumes">Volumes</option>
+            </select>
+        </div>
         <div class="content-container">
             <content>
                 <!-- Cards serão adicionados dinamicamente pelo JavaScript -->
             </content>
         </div>
     </main>
-    <script defer type="module" src="data.js"></script>
-    <script defer type="module" src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
